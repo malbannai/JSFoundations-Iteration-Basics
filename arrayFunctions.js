@@ -9,7 +9,11 @@
  * getOdds([11, 35, 52, 14, 56, 601, 777, 888, 999]) -> [11, 35, 601, 777, 999]
  */
 function getOdds(numbers) {
-  // Your code here
+  let filteredNumbers = [];
+  filteredNumbers = numbers.filter(function (number) {
+    return number % 2 === 1;
+  });
+  return filteredNumbers;
 }
 
 /**
@@ -23,7 +27,11 @@ function getOdds(numbers) {
  * getEvens([11, 35, 52, 14, 56, 601, 777, 888, 999]) -> [52, 14, 56, 888]
  */
 function getEvens(numbers) {
-  // Your code here
+  let filteredNumbers = [];
+  filteredNumbers = numbers.filter(function (number) {
+    return number % 2 === 0;
+  });
+  return filteredNumbers;
 }
 
 /**
@@ -36,7 +44,11 @@ function getEvens(numbers) {
  * getDuplicateCount(52, [11, 35, 52, 14, 56, 601, 52, 777, 888, 999, 52]) -> 3
  */
 function getDuplicateCount(x, numbers) {
-  // Your code here
+  let count = 0;
+  numbers.forEach(function (number) {
+    if (number === x) count++;
+  });
+  return count;
 }
 
 /**
@@ -49,7 +61,15 @@ function getDuplicateCount(x, numbers) {
  */
 
 function makeThemDoctors(students) {
-  // Your code here
+  let newDoctors = [];
+
+  newDoctors = students.map(function (student) {
+    return "Dr. " + student;
+  });
+
+  return newDoctors;
 }
+
+//console.log(makeThemDoctors(["Ali", "Aseel", "Richard"]));
 
 module.exports = { getOdds, getEvens, getDuplicateCount, makeThemDoctors };
